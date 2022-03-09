@@ -1,0 +1,422 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - helo
+    - Helo
+    - Hello
+    - Hey
+    - yoow
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - Ok, bye
+    - ok, thanks
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - why
+    - Yes, I am.
+    - ok
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - No
+    - I'm not interested in avocado farming
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+    - I'm good.
+    - Im great
+    - im good
+    - im ok
+    - good
+    - Im good
+    - im  great.
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+    - I'm not good.
+    - Not so great
+    - not so good
+    - Damn you
+    - No, you have very little useful information
+    - You are shit
+    - Your reply game is weak
+    - You barely helped
+    - So that's all you're good for?
+- intent: joke
+  examples: |
+    - tell me a joke
+    - tell me something funny
+    - joke
+    - do you have jokes
+    - do you know any jokes
+- intent: inquiry
+  examples: |
+    - what can you do for me
+    - what do you do
+    - how can you help
+    - how do I use the chatbot
+    - what can you help me with
+    - what is your purpose
+    - avocado?
+    - how can you actually help?
+    - what can you help me with today?
+    - What are you?
+    - What can you tell me about avocados?
+    - What is an ovacado?
+    - Avocado
+    - What can you tell me about avocadoes
+    - Oow, ok. No, but I might be interested.
+- intent: yield
+  examples: |
+    - average yield
+    - how many avicados can one tree produce
+    - what is the yield for avovado tree
+    - yield per variety
+    - What is the average yield for avocado?
+- intent: site
+  examples: |
+    - where can I grow avocado
+    - best place to grow avocado
+    - suitable places for avocado farming
+    - site selection for avocado farming
+    - places where avocados thrive
+    - site requirements for avocado farming
+    - best soil to grow avocado soil
+    - which soils is good for avocado
+    - suitable soils for avocado
+    - can i grow avocado in loam soil
+    - is red soil good for avocado
+    - which soils to grow avocado
+    - which soil is bad for avocado
+    - soil requirements for avocado
+    - soil
+    - the most suitable conditions
+    - which soil is suitable to grow avocado?
+- intent: land_preparation
+  examples: |
+    - how to prepare land for avocado farming
+    - land preparation requirements
+    - site preparation for avocado
+    - preplanting steps for avocado
+    - what to do after site selection
+    - planting guide
+    - planting guide for avocado farming
+- intent: fertilizer
+  examples: |
+    - which fertilizer to use during planting
+    - best fertilizer for avocado seedlings
+    - types of fertilizers for avocado
+    - avocado fetilizers
+- intent: cultivation
+  examples: |
+    - guidelined for avocado farming
+    - step by step guide for avocado farming
+    - dos and don't for avocado faming
+    - how to grow ovacado
+    - what do I need to start farming
+    - what planting materials do I need
+    - how to get started
+    - tips for new farmers
+    - guide for new farmer
+    - beginner guides
+    - step by step guide
+    - Wow, that's a lot. How can I start farming avocadoes?
+    - Gow to grow avocadoes
+    - how to farm avocados
+    - How to plant avocado
+    - The step by step procedure.
+- intent: season
+  examples: |
+    - best season to plant ovacado
+    - reaping time for avocado
+    - best time to harvest ovacado
+    - avocado reaping season
+    - months to plant ovacado
+    - time to plant avocado
+- intent: nursery_management
+  examples: |
+    - requirements for nurseries
+    - guidelines for nursery management
+    - what are the recommended grafting heights
+    - suitable varieties for growing area
+    - high health production of avocado seedlings
+    - Is grafting necessary?
+- intent: varieties
+  examples: |
+    - what varieties are available
+    - types of avocados
+    - different varieties of avocado
+    - common local varieties
+    - what is the best variety
+    - most preffered local varieties
+    - common commercial varieties
+    - most preffered commercial varieties
+    - export varieties
+    - most preffered varieties for export
+    - most economic variety
+    - which variety has the best yield
+    - are there new varieies
+- intent: maturity
+  examples: |
+    - how long does it take for an avocado tree to mature
+    - an avocado tree matures after how long
+    - time taken to grow avocado
+    - how many months does it take to grow avocado
+    - when to harvest avocado
+    - signs of maturity in avocado
+    - after how long should I harvest avocado fruits
+    - harvesting time for avocado
+    - how old is avocado tree
+    - How long does it take to mature?
+- intent: market
+  examples: |
+    - where can I sell my ovacado
+    - avocado markets around me
+    - markets fo large scale avocado production
+    - places with demand for avocado
+    - i'm looking fo a place to sell ovacado
+- intent: location
+  examples: |
+    - where can I get planting materials
+    - where to buy seedlings
+    - soucing faming materials
+    - i'm lookin for a place to buy seedlings
+    - challenge finding planting materials
+    - where can I find avocado experts
+    - where to find avocado seedlings
+    - avocado farming materials around me
+    - where can I buy seedlings?
+    - I need to buy avocado seedlings. Where can I get some?
+    - can I grow avocado in Migori?
+    - Where can I buy the seedlings?
+- intent: water_requirements
+  examples: |
+    - how much rainfall does avocado need
+    - ideal rainfall for avocado
+    - irrigation for avocado seedlings
+    - irrigation for avocado plants
+    - how much water does avocado need
+    - water requirements for avocado seedlings
+    - water requirements for avocado
+    - how much water does the plant need
+    - how long can the plant stay without water
+    - is too much rain bad
+    - do I need  to water my plants
+    - how often should I water the plants
+- intent: price
+  examples: |
+    - how much can I sell ovacado
+    - prices for avocado
+    - price for a sack of avocado
+    - prices of avocado around me
+    - price of avocado seedlings
+    - how much do avocado seeds cost
+    - price per seedling
+    - price for avocado planting materials
+    - And how much does a seedling cost?
+- intent: earnings
+  examples: |
+    - how much does avocado farming cost
+    - how much can I get from farming avocado
+    - How much can one make from avocado farming?
+    - How much can an avocado farm make?
+    - How lucrative is avocado farming?
+    - How much can I earn from avocadoes?
+    - Average eanings for avocado farmers
+    - How much does an avocado farmer make?
+    - Is avocado faming profitable?
+    - Profits from avocado farming
+    - is ovacado farming lucrative?
+    - Pofits from avocado farming
+    - how lucrative is avocado farming?
+    - Yes, how lucrative is avocado farming?
+    - how much can I get from avocado faming?
+- intent: asking_help
+  examples: |
+    - i need help
+    - need help
+    - help me please
+    - help
+    - help me
+    - can you help me
+    - i need your help
+    - help plese
+    - please help me
+    - I'm good. How can you help me?
+    - im good. I need you help
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - A little. What are you?
+    - What are you
+    - Can you be my friend?
+    - what is your name
+- intent: processing
+  examples: |
+    - I want to know how to make guacamole
+    - How can I make guacamole
+- intent: nutrition
+  examples: |
+    - Is avocado healthy?
+    - Are there any side effects from eating avocadoes
+- intent: ask_weather
+  examples: |
+    - what is the weather now
+    - will it rain tomorrow?
+    - Is it going to rain today?
+    - Is it going to rain tomorrow?
+    - how is the weather going to be today?
+    - how is the weather going to be tomorrow?
+    - may i know the weather
+    - is it sunny outside
+    - is it raining now
+    - tell me the weather
+    - I want to know the weather
+    - weather please
+    - what's the weather today
+    - what's the temperature right now
+    - hows the weather going to be
+    - i want to know the temperature
+- intent: town
+  examples: |
+    - [Kisii](location)
+    - [Kiambu](location)
+    - [Kericho](location)
+    - [Embu](location)
+    - [Meru](location)
+    - [Kisumu](location)
+    - [Machakos](location)
+    - [Nakuru](location)
+    - [Eldoret](location)
+    - [Kakamega](location)
+    - [Mumias](location)
+    - [Murang'a](location)
+    - [Nandi](location)
+    - [Bungoma](location)
+- intent: weather_town
+  examples: |
+    - tell me the weather in [Kisii](location)
+    - I want to know the weather in [Kericho](location)
+    - weather for [Embu](location) please
+    - what's the weather today in [Meru](location)
+    - what's the temperature in [Kisumu](location) right now
+    - hows the weather in [Machakos](location)
+    - i want the temperature at [Nakuru](location)
+- intent: disease_type
+  examples: |
+    - [algal leaf spot](disease)
+    - [scab](disease)
+    - [cercospora](disease)
+    - [anthracnose](disease)
+    - [root rot](disease)
+- intent: disease
+  examples: |
+    - what diseases can affect avocado trees
+    - diseases affecting avocado
+    - my plants are infected
+    - my leaves have spots
+    - avocado leaves changing colour
+    - unhealthy avocado tree
+    - sick avocado plants
+    - disease infestation
+    - solutions for disease infestation
+    - protection against diseases
+    - what is the pesticide for [algal leaf spot] (disease)
+    - [Scab] (disease) remedy
+    - Plants infected with [scab] (disease)
+    - How to solve [algal leaf spot] (disease) problem
+    - [Anthracnose] (disease) infestation
+    - How to solve [anthracnose] (disease) problem
+    - Remedy for [anthracnose] (disease)
+    - What is the remedy for [anthracnose] (disease)
+    - [Cercospora]  (disease) infestation
+    - How to solve [cercospora] (disease) problem
+    - Remedy for [cercospora] (disease)
+    - What is the remedy for [cercospora] (disease)
+    - [Root rot] (disease) problem
+    - Remedy for [root rot] (disease)
+    - How to prevent [root rot]
+    - How to solve for [root rot]  (disease)
+    - How to solve for [root rot]
+    - avocado diseases
+    - avocado infection
+    - I'm good. I want to know how to control algal leaf spot
+    - Algal leaf spot remedy.
+    - A little. What is the remedy for algal leaf spot? My plant's are infected.
+    - What is the remedy for algal leaf spot?
+- intent: pests
+  examples: |
+    - pesticides for nursery
+    - protection against pests
+    - solution for pest attack
+    - prevention of attack by pests and diseases
+    - pesticides for seedlings
+    - pest attacks on avocado trees
+    - pests affecting avocado
+    - example of pests affecting avocado

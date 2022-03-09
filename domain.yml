@@ -1,0 +1,226 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- inquiry:
+    use_entities: true
+- yield:
+    use_entities: true
+- site:
+    use_entities: true
+- fertilizer:
+    use_entities: true
+- cultivation:
+    use_entities: true
+- season:
+    use_entities: true
+- nursery_management:
+    use_entities: true
+- varieties:
+    use_entities: true
+- maturity:
+    use_entities: true
+- market:
+    use_entities: true
+- location:
+    use_entities: true
+- water_requirements:
+    use_entities: true
+- disease:
+    use_entities: true
+- pests:
+    use_entities: true
+- price:
+    use_entities: true
+- asking_help:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- land_preparation:
+    use_entities: true
+- joke:
+    use_entities: true
+- earnings:
+    use_entities: true
+- nutrition:
+    use_entities: true
+- processing:
+    use_entities: true
+- ask_weather:
+    use_entities: true
+- weather_town:
+    use_entities: true
+- town:
+    use_entities: true
+- disease_type:
+    use_entities: true
+entities:
+- disease
+- location
+slots:
+  disease:
+    type: rasa.shared.core.slots.TextSlot
+    mappings:
+     - type: from_intent
+    initial_value: null
+    influence_conversation: true
+  location:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    mappings:
+     - type: from_intent
+    influence_conversation: true
+responses:
+  utter_greet:
+  - text: Hey! How are you?
+  - text: Hello there!
+  - text: Hello!
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: Here is something to cheer you up;
+  utter_goodbye:
+  - text: Bye
+  utter_affirm:
+  - text: Ok
+  utter_algal_leafspot:
+  - text: Avocado algal leaf disease starts when green, yellowish, or red-orange raised spots start to appear in abundance on your avocado leaves. Sometimes those spots spread to twigs and branches or come together to create larger blobs of discolored tissue. As the algal reproductive systems mature, the spots will all turn rust-colored and may also discolor the unaffected side of the leaf.
+  utter_algal_remedy:
+  - text: It can be controlled by removing any debris or weeds around the trunks of these trees, as well as thinning the interior of the plant to ensure that maximum air flow is available to dry out leaves and bark. If younger trees or vital landscape plants are affected, treating spots on avocado leaves is easy. Even though the existing spots will remain after treatment, you can prevent new spots from forming by thinning the tree and spraying it with a copper fungicide. Trees that have had repeated problems with algal leaf spot and have been thinned may need to be treated on a schedule, just make sure to observe any hold times before harvesting fruit.
+  utter_altitude:
+  - text: Depending on the variety, avocado grows well from 1000-2200 m above sea level.
+  utter_anthracnose:
+  - text: Unlike many avocado diseases that are basically cosmetic, anthracnose is often difficult to see and can selectively ruin fruits, leaving all other plant parts untouched. You might notice some leaf spots, but it’s far more likely your first brush with this fungal pathogen will occur while your fruits are ripening. Avocados will suddenly sport small dark spots that expand rapidly, within just one or two days, as the fruit ripen. Because the skin of the immature avocado fruit is largely protective against anthracnose infection, it’s easy to have a bad case of anthracnose without even knowing it. Although this fungus isn’t dangerous for humans to consume, it can affect fruit quality dramatically, with the damaged areas of the avocado discoloring and producing a sour flavor. Home growers can simply cut these spots out, but if you’re selling your produce, you may need to take greater steps to ensure that your avocados are marketable in the future.
+  utter_anthracnose_remedy:
+  - text: Avocado anthracnose treatment; • Removing all dead fruits, leaves, and branches at the end of the year and cleaning up any debris or dropped fruits that might accumulate underneath. • Prune your trees so the insides are more open and allow the wind to penetrate, reducing life-giving humidity in the canopy. • Spraying the tree with copper fungicide every two weeks after blossom drop will ensure that your fruit is protected throughout its development. Spray with appropriate fungicides e.g. dithiocarbamates, at interval of 7-10 days depending on weather conditions. Also, treating or remedying other diseases, pests, or handling problems will also help tremendously. • Handle your fruits carefully post-harvest. Cooling ripening fruits immediately and holding them at 41 degrees Fahrenheit (5 degrees C.) is vital. Temperatures of 75 degrees Fahrenheit (24 degrees C.) will accelerate the growth of any anthracnose that managed to evade your spraying efforts. Harvesting during dry conditions can help avoid contaminating fruits that were otherwise perfect.
+  utter_avocado:
+  - text: Avocado is a perennial fruit tree crop native to South America but grows well in Kenya. It is very nutritious with a high protein and oil content and is becoming increasingly important as an export crop. Nutritionally the avocado oil is cholesterol free (monounsaturated type) believed to protect against heart disease and certain kinds of cancers. The fruit is nearly sodium free, is rich in potassium, dietary fibre and vitamin B6, C, D and E. It is eaten as fresh fruit, in salads, soups, ice cream, also used to make avocado oil, perfume and avocado paste.  It is an important commercial fruit in Kenya both for local and export markets
+  utter_cercospora:
+  - text: Cercospora fruit spot  is a fungal disease whose symptoms can include, but are not limited to, small brown to purple spots on leaves, angular-appearing spots on leaves, small irregular brown spots on fruits or fissures and cracks in the fruit’s surface. Fruits tend to become infected during the wettest part of their growing season. By itself, Cercospora won’t damage avocados beyond use and the fungus doesn’t penetrate the rind of the fruit, but the fissures that can result from the fungal feeding invite more destructive pathogens into the flesh.
+  utter_cercospora_remedy:
+  - text: It can be prevented by cleaning up all fallen leaves, shed fruits and keeping the area around the tree free of unwanted plants. If there are any avocados that didn’t get picked and didn’t fall in the previous season, get those things off the tree ASAP. Treatment involves the use copper based fungicides sprayed three to four times a year and basic field hygine.
+  utter_confirm_domain:
+  - text: Are you an Avocado farmer? Or are you interested in Avocado farming?
+  utter_constraint:
+  - text: I'm sorry but my expertise is limited to Avocado farming.
+  utter_crop_management:
+  - text: Once the seedlings have taken off well, break the hard pan formed when irrigating or watering by shallowly digging at the base of the stem. Prune avocado at an early stage before the plant starts to flower.\tPruning is done at an early stages before the plant starts to flower. It may also be done after harvesting.
+  utter_crop_type:
+  - text: Avocado is a perennial crop, meaning the fruits regrow every season
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_disease_management:
+  - text: Be sure to check for diseases regulaly. Remove and burn infected plants as soon as possible to check the spread of the diseases. Major disease of avocado includes Scab which affect both the major varieties and can be discouraged by using fungicides.
+  utter_fertility:
+  - text: Apply  site specific fertilizer recommendation based on soil analysis results. Application Procedure; •\tMix one debe (20 kg) of well decomposed manure and 125 g of TSP with topsoil and return the soil to the hole dug earlier to refill the hole •\tIn the early years, avocado require high levels of nitrogen but after they begin to bear, the fertilizer should be higher in phosphate and potash •\tApply 1 debe 20 -30kg of well-decomposed manure annually; The quantity of manure applied increases with age of the crop; 4 debes each year at an optimum production from 7th year •\tSpread fertilizer or manure around the drip line of tree canopy and mix with the soil. •\tUnder dry conditions, the hole should be bigger about 90 x 90 cm and 90 cm deep •\tFor irrigated orchard apply the same quantity of manure  any time of the year  but this should be followed by increased application of irrigation •\tFor Top dressing fertilizer use 120-130 g of  CAN or 50-60 g of Urea per stool.
+  utter_flow_finished:
+  - text: Is that all you needed to know?
+  utter_happy:
+  - text: Great, I'm happy to help!
+  - text: That's great.
+  - text: Awesome!
+  utter_harvesting:
+  - text: |-
+      Harvest avocado fruit by pulling it from the stalk leaving a 3 cm stalk. Harvest depending on the market requirement and distance to the market.
+      • Avocado starts bearing within 3 years after transplanting. Peak harvest occurs between March – September in Kenya. 
+      • Avocado is picked and stored at room temperature for 7- 10 days. If they soften without shrivelling, then the fruits is ready for harvesting. 
+        • Fruit should be pulled from the stalk but cut off leaving a 3 cm stalk. 
+      • The yield increases as the tree continues to grow. 
+      • Average yield is 250-300 kgs per tree per year (8-10 tonnes/acre)
+  utter_helper:
+  - text: I am here to answer any questions you might have regarding Avocado farming. I am your personal expert utility tool.
+  - text: I'm an avocado expert at your service.
+  utter_iamabot:
+  - text: I am a Conversational Agent designed to act an an expert system for avocado farmers.
+  utter_joke:
+  - text: Do you want to hear a joke instead? '
+  utter_land_preparation:
+  - text: Steps during land preparation (1)\tClear the field of trees, bushes and weeds (2)\tPlanting holes 60cm x 60cm x 60cm (3)\tSeparate topsoil and sub soil (4)\tSpacing may range from 6m x 6m, 6m x 7m or 8m x 10m between trees depending on growth characteristic of the individual variety and the type of soil. Soils should be deep ripped in a cross pattern to crack any hard pans.  Soil amendments (lime / calcium / phosphorous / organic matter) should be well mixed into the soil. The soil should be loosened as deep as possible. In shallow soils – ridges of 3m wide and 0.5m high are recommended to increase soil depth and drainage. Inter-row spacing should be planned to allow equipment access. Tree density depends on the climate and the variety.
+  utter_marketing:
+  - text: Establish market for avocado at the time of harvest depending on where price is better. When there is an excessive supply of avocados in the market, prices are very low. KAMIS is the source of market data (prices and volumes) in the Kenyan region. Other sources include; AMIS, National Agricultural Commodities Market Information (NAFIS) and TruTrade Venture Labs East Africa
+  utter_maturity:
+  - text: Grafted avocado varieties attains maturity after 3-4 years Maturity indices include; • Change in colour from green to black or purple in dark varieties •\tFruit stems turn yellow  and the fruit skin may be  less shinny •\tThe end of the green varieties  may develop rust-like  spot
+  utter_nutrients:
+  - text: Avocado nutrient requirements include; Nitrogen (N), Phosphorous (P), Potassium (K), Magnessium (Mg), Calcium (Ca), Sulphur (S). Dolomitic lime is part substituted for calcitic lime if magnesium is deficient.  If phosphorous is deficient it should be added along with the lime and mixed thoroughly into the soil prior to planting.  Incase the soil is too alkaline, the pH may be reduced by adding sulphur and keeping the soil moist for 6-12 months. Calcium is a critical nutrient in avocado production.  Soil levels need to be high enough to suppress root rot.  Plant levels are important for the nutrient content and storability of the fruit.
+  utter_offer_help:
+  - text: Do you have any questions at all to do with avocado farming?. It could be anything ranging from cultivation, crop management, market/ price information or even directions to a nursery near you!
+  utter_pest_management:
+  - text: The common Avocado pests include Red spider mites, avocado thrips, white flies and fruit fly. They can be managed by use of insecticides and pesticides.
+  utter_ph:
+  - text: A pH between 5.5 – 6.5 is required.
+  utter_planting_season:
+  - text: |-
+      Plant at the onset of rains when rain water has properly penetrated the soil, if there is sufficient irrigation, then planting is possible at any time of the year. 
+      Orchard establishment: 
+      • Water the hole just before planting to ensure contact of the roots with moist soil. 
+      • Remove the eco-bag and hold the soil media around the roots 
+      • Maintain the position of the level of soil as it was in the eco-bag while planting and firm the soil around the planted seedling 
+      • Water well and mulch after transplanting.
+  utter_preplanting:
+  - text: Avocadoes can be grown from seeds or from the seedlings.  Grafted seedlings increases resistance to diseases, yield and adaptability to different soils. Nursery site selection Ensure the following ; nearness to quality water source, good drainage, security from animals and thieves, accessibility to the road and availability of wind breaks. Nursery establishment Prepare a seedbed of width 1 m and a desirable length by removing farm soil from the seedbed to a depth of 30 cm and refill the 30 cm depression with sand. Seed preparation •\tCollect seed only from healthy and vigorous mother trees and from fruits which are mature and healthy rather than picking from the ground. •\tLarge sized seeds generally produces vigorous seedlings. •\tCultivars used as rootstocks are Puebla or Local varieties. •\tExtracted seeds should be treated in hot water not exceeding 50 ºC for 30 minutes. •\tCoat or dipped in a broad spectrum fungicide e.g. Metalaxyl to prevent infection with Phytophthora cinnamon fungi. Sowing seeds Plant seeds with the flat basal end pointing downwards either in nursery beds or directly into eco-bags, about 20 cm in diameter and 30 cm deep. Transplanting •\tAbout 20 days after germination, plant should be 20 cm high and having developed two pairs of leaves •\tTransplant open seeded seedlings in nursery beds by uprooting and planting into containers •\tPotting media should be medium texture, sterilized if possible and with good drainage properties. Grafting •\tThe rootstocks are ready for grafting 6 months after transplanting into biodegradable containers 6 X 9 inches •\tThe rootstocks are grafted using scions of desired variety •\t4 to 6 months later, the seedlings are ready for transplanting into the field and should be well healed and free from pests and diseased."
+  utter_processing:
+  - text: Avocado fruit is widely used in cosmetics industry, juices, shakes, ice creams, dips, pastes and purees.
+  utter_production:
+  - text: Avocado is grown in several parts of Kenya and about 70% of avocado production is by small-scale growers. They grow it for subsistence, local markets, and export purposes. The avocado export market in Kenya is dominated by five major exporters; Kakuzi, Vegpro, Sunripe, Kenya Horticultural Exporters, and East African Growers. These companies source their avocados primarily from smallholder farmers, although some firms also source from larger growers or own plantations. Farmers should also explore value addition for more income.
+  utter_rootrot:
+  - text: Avocado root rot can affect trees of all sizes and ages. It mostly affects the feeder roots of avocado trees, causing them to become black, brittle and unable to take up valuable nutrients and life sustaining water. Because these roots lie beneath the soil surface, this disease can severely infect a plant while going mostly unnoticed. The first visible symptoms of root rot in avocado trees is light green to yellow, undersized foliage on infected plants. Leaves may also have brown, necrotic tips or margins. As the disease progresses, foliage will wilt and drop, exposing the fruit to sunscald. The upper branches of infected avocado trees will also die back. Fruit production also declines in infected trees. They may bear small or sparse fruit at first, but eventually fruit production will stop altogether. This disease does usually result in the death of infected trees. It is most prevalent in sites that periodically floor or puddle up from bad drainage, low grade, or improper irrigation. Berming up the site or adding garden gypsum and organic matter can be excellent ways to provide proper drainage. Control •\tPlant in well-drained soil •\tWhere drainage is not good, Plant in ridges •\tApply metalaxyl based chemical "
+  utter_scab:
+  - text: Avocado scab disease is a fungal disease whose symptoms present as oval to round, raised areas of corky scab. The first lesions that appear are generally black/brown and scattered across the fruit’s skin. The lesions begin to coalesce and merge, potentially affecting almost the entirety of the fruit. Symptoms of scab on the leaves are more difficult to ascertain, as the most visible signs are in the uppermost portions of the tree’s canopy. Young leaves may become distorted and stunted with reddish spots on both the upper and lower sides of the foliage. Fruit is most susceptible right after fruit set and during the early stages of development. When the fruit is at about half its mature size, it becomes resistant to the infection, as do leaves once they are about a month old. The disease is most prevalent after long periods of rain, especially when the tree is in its initial stages of fruit set. Although the disease is primarily cosmetic, affecting the exterior of the fruit but not the interior, it is a portal for other diseases. Fungicides should be used to mitigate the spread of the fungus. Treatment involves the application of copper fungicide when flower buds appear, near the end of bloom time and again 3-4 weeks after.
+  utter_scab_remedy:
+  - text: Fungicides should be used to mitigate the spread of the fungus. Treatment involves the application of copper fungicide when flower buds appear, near the end of bloom time and again 3-4 weeks after.
+  utter_site_selection:
+  - text: Avocado farming begins with the proper site selection requires a well-drained deep soil, with good water holding capacity. Select a suitable and well drained ground depending on the agro ecological requirement of the variety. Direct sunshine can damage exposed fruit.
+  utter_soil:
+  - text: Avocado requires deep soil, with good water holding capacity and free draining. It requires a pH of 5.5 – 6.5. Lime can be added to acidic soil to increase the soil pH to 6.5. A complete soil analysis done in good time in advance of planting is essential.
+  utter_soil_depth:
+  - text: The minimum soil depth is 100 cm
+  utter_soil_type:
+  - text: Loam soil is highly suitable. Sandy loam can also be used
+  utter_specify:
+  - text: What do you want to know exactly?
+  utter_storage:
+  - text: Store avocado in a cool dry place to minimize internal chemical reaction that may accelerate early ripen. Postharvest treatments cannot improve the quality of the fruit and preserve it. Tips; •\tDip newly harvested fruits into hot water to minimize fruit fly damage and anthracnose. Hot water treatment controls anthacnose disease while fungicide controls soft brown rot •\tAesthetic value waxing prevents moisture loss and chilling injury •\tIn the packhouse cut the pendicel to about 5mm •\tUse sodium hypochlorite to prevent build-up of pathogen and treat the fruit with hot water at 47oC for 5 minutes
+  utter_temperature:
+  - text: The temperatures should be 20 – 30 oC. Fruits suffer heat damage in temoeratures above 33 oC and impaired growth of tree above 40 oC.
+  utter_transportation:
+  - text: Stack avocados containers well to avoid any movement during transportation. Tips; •\tCartons should be well ventilated and should have a handle for handling •\tFruit should not rub against each other during transportation •\tPack the fruits in single layer in fibre board cartons, to void rubbing against each other that can shorten the shelf life of the fruits •\tTransport or store mango at 11oC for green fruit and 8oC for riper ones •\tMost varieties can store at temperatures between 10oC and 13oC with relative humidity of 85 to 90 % for a storage period of between two to four months •\tStore the produce in a cool dry place. This will minimize internal chemical reaction that may accelerate early ripen before they reach the market
+  utter_varieties:
+  - text: Avocado best varieties such as Hass, Fuertes and Pinkerton can be acquired through HCD, KALRO, KEPHIS, certified centres like JKUAT or others spread in various locations.
+  utter_water_management:
+  - text: For avocado, rainfall of over 1000 mm is essential during production period. Irrigate regularly in the drier areas during early stages of growth and development. Requirements •\tWater young plants frequently for proper establishment •\tIrrigate grown up trees at 10-15 days interval from fruit set to maturity •\tIrrigation can also be applied to stimulate flowering after a distinct dry spell •\tExplore drip irrigation in dry regions •\tIrrigation is not recommended for 2 – 3 months prior to flowering as it is likely to promote vegetative growth at the expense of flowering
+  utter_weed_management:
+  - text: For avocado; •\tKeep the orchard weed free in the early stages of growth •\tIn mature trees, weed 2 m strip along the rows and cut grass in the rest of the field • Intercropping with legumes, vegetables, cereals and fodders can be done at the early growth stages. • Manage weeds using cover crops and mulching • For pure stand, herbicides can be used
+  utter_yield:
+  - text: The yield increases as the tree continues to grow. The average yield is 250-300 kgs per tree per year (8-10 tonnes/acre)
+  utter_buy_seedlings:
+  - text: You can buy seedlings from;
+  utter_cultivation:
+  - text: |-
+      Avocados like well-drained soils. If your farm has water-logging problems make sure to plant your avocados on raised grounds.
+           Choose the desired spacing you like and get to work. You can do spacing of 6m-5m, 6-9m, or 7-10m. The size of the avocado hole should be 60cm x 60cm ( 2 Feet x 2 Feet). When you dig your holes put the topsoil on the left side and the sub-soil on the right. Mix the topsoil and 2 DEBES of well-decomposed manure and a handful of NPK (20:10:10). Empty your soil mixture into the hole and mark it for reference.
+           It is now time to transplant your avocado plant. Don’t transplant when you don’t have water on the farm. The rule of thumb is to transplant during the start of the rainy season. In Kenya is at the end of April. Growing at the onset of rains will enable your avocadoes to establish themselves well on the farm. If you have enough funds set aside for drip irrigation this will give you water control. You can transplant any time.
+  utter_locator:
+  - text: Where are you located?
+  utter_ask_location:
+  - text: For which town?
+  utter_profits:
+  - text: According to Oxyfarm, A plot of land has apoximately 150 trees, each producing 1000 fruits. It costs about Ksh 40,000 to plant an acre of hass avocado and each can be sold at Ksh 15. The profits can be up to millions!!
+actions:
+- action_get_weather
+- utter_profits
+forms: {}
+e2e_actions: []

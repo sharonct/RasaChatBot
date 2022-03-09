@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  rasa-server:
+    image: rasa/rasa:latest-full
+    volumes:
+      - .:/app
+    entrypoint: sh
+    tty: true
+    depends_on:
+      - action-server
+
+  action-server:
+    image: rasa/rasa-sdk:latest
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./actions:/app/actions
+    entrypoint: ["sh", "-c", "python -m debugpy --listen 0.0.0.0:5678 -m rasa_sdk --actions actions --auto-reload --debug"]
+    ports:
+      - 5678:5678

@@ -1,0 +1,224 @@
+version: "2.0"
+stories:
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+- story: inquiry
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+  - intent: inquiry
+  - action: utter_helper
+  - action: utter_confirm_domain
+  - checkpoint: check_asked_question
+- story: handle user affirm
+  steps:
+  - checkpoint: check_asked_question
+  - intent: affirm
+  - action: utter_specify
+  - intent: cultivation
+  - action: utter_site_selection
+  - action: utter_land_preparation
+  - action: utter_maturity
+- story: handle user deny
+  steps:
+  - checkpoint: check_asked_question
+  - intent: deny
+  - action: utter_constraint
+  - intent: affirm
+- story: cultivation
+  steps:
+  - intent: cultivation
+  - action: utter_specify
+  - checkpoint: check_scope
+- story: site selection
+  steps:
+  - checkpoint: check_scope
+  - intent: site
+  - action: utter_site_selection
+  - action: utter_soil_type
+  - action: utter_soil
+- story: land preparation
+  steps:
+  - checkpoint: check_scope
+  - intent: land_preparation
+  - action: utter_land_preparation
+- story: nursery management
+  steps:
+  - checkpoint: check_scope
+  - intent: nursery_management
+  - action: utter_preplanting
+  - action: utter_crop_management
+- story: nutrient requirements
+  steps:
+  - checkpoint: check_scope
+  - intent: fertilizer
+  - action: utter_fertility
+  - action: utter_weed_management
+  - action: utter_nutrients
+- story: water management
+  steps:
+  - checkpoint: check_scope
+  - intent: water_requirements
+  - action: utter_water_management
+- story: pest management
+  steps:
+  - checkpoint: check_scope
+  - intent: pests
+  - action: utter_pest_management
+- story: scab management
+  steps:
+  - checkpoint: check_scope
+  - intent: disease
+    entities:
+    - disease: Scab
+  - action: utter_scab
+- story: Cercospora management
+  steps:
+  - checkpoint: check_scope
+  - intent: disease
+    entities:
+    - disease: Cercospora
+  - action: utter_cercospora
+- story: Anthracnose management
+  steps:
+  - checkpoint: check_scope
+  - intent: disease
+    entities:
+    - disease: Anthracnose
+  - action: utter_anthracnose
+- story: Root rot management
+  steps:
+  - checkpoint: check_scope
+  - intent: disease
+    entities:
+    - disease: Root rot
+  - action: utter_rootrot
+- story: Algal leaf spot management
+  steps:
+  - checkpoint: check_scope
+  - intent: disease
+    entities:
+    - disease: Algal leaf spot
+  - action: utter_algal_leafspot
+- story: yield happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: yield
+  - action: utter_yield
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+- story: yield sad path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: yield
+  - action: utter_yield
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_offer_help
+  - action: utter_specify
+  - checkpoint: check_scope
+- story: season happy path
+  steps:
+  - intent: season
+  - action: utter_planting_season
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+- story: season sad path
+  steps:
+  - intent: season
+  - action: utter_planting_season
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_offer_help
+  - action: utter_specify
+  - checkpoint: check_scope
+- story: varieties
+  steps:
+  - intent: varieties
+  - action: utter_varieties
+- story: maturity
+  steps:
+  - intent: maturity
+  - action: utter_maturity
+  - action: utter_harvesting
+- story: market information
+  steps:
+  - intent: market
+  - action: utter_production
+  - action: utter_marketing
+## weather
+- story: ask_weather
+  steps:
+  - intent: ask_weather
+  - action: action_get_weather
+
+- story: ask weather happy path
+  steps:
+  - intent: ask_weather
+  - action: utter_ask_location
+  - intent: town
+    entities:
+    - location: Kisii
+  - slot_was_set:
+    - location: Kisii
+  - action: action_get_weather
+  - slot_was_set:
+    - location: null
+- story: ask weather with city happy path
+  steps:
+  - intent: weather_town
+    entities:
+    - location: Nakuru
+  - slot_was_set:
+    - location: Nakuru
+  - action: action_get_weather
+  - slot_was_set:
+    - location: null
+- story: Story from Conversation ID 5753ce2d59b648e9bea387704770ee04
+  steps:
+  - action: utter_greet
+  - intent: disease
+  - action: utter_algal_remedy
+  - action: utter_flow_finished
+  - intent: affirm
+  - action: utter_happy
+- story: Story from Conversation ID f3105d872a79486f90f1b3dff1e8aec5
+  steps:
+  - action: utter_seedling_price
+  - intent: deny
+  - action: utter_happy
+- story: Story from Conversation ID 13a6288f2bfe41c6aa89cf0f027fa145
+  steps:
+  - intent: site
+  - action: utter_soil_type
+  - action: utter_soil
+
+
